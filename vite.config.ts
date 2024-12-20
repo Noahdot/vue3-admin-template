@@ -5,6 +5,7 @@ import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import Icons from 'unplugin-icons/vite';
 import IconsResolver from 'unplugin-icons/resolver';
+import UnoCSS from 'unocss/vite';
 import path from 'path';
 
 const pathSrc = path.resolve(__dirname, 'src');
@@ -38,7 +39,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       }),
       Icons({
         autoInstall: true
-      })
+      }),
+      UnoCSS()
     ],
     resolve: {
       alias: {
