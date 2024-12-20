@@ -45,5 +45,12 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         '@': pathSrc,
       }
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@use "@/styles/variables.scss" as *;`
+        }
+      }
+    }
   }
 });
