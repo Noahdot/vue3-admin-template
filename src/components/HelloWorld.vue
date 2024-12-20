@@ -1,11 +1,3 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-
-defineProps<{ msg: string }>()
-
-const count = ref(0)
-</script>
-
 <template>
   <h1>{{ msg }}</h1>
 
@@ -32,7 +24,17 @@ const count = ref(0)
     >.
   </p>
   <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+  <br>
+  <div>count: {{ counterStore.count }}</div>
+  <div>count*2: {{ counterStore.double }}</div>
 </template>
+
+<script setup lang="ts">
+import { useCounterStore } from '@/store/counter';
+const counterStore = useCounterStore();
+defineProps<{ msg: string }>()
+
+</script>
 
 <style lang="scss" scoped>
 .read-the-docs {

@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
   <div>
     <a href="https://vite.dev" target="_blank">
@@ -12,7 +8,15 @@ import HelloWorld from './components/HelloWorld.vue'
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <br>
+  <el-button @click="countIncrement">++</el-button>
 </template>
+
+<script setup lang="ts">
+import { useCounterStore } from '@/store/counter';
+const { increment } = useCounterStore();
+const countIncrement = () => increment();
+</script>
 
 <style scoped>
 .logo {
